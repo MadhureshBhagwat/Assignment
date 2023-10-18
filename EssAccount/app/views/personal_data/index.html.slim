@@ -1,0 +1,8 @@
+.w-full
+  .flex.flex-col.justify-center.items-center
+    .mt-0.mb-auto
+    div.font-bold.text-lg.mb-5 Welcome to Ess Account App
+    = button_to 'Personal Data', new_personal_datum_path, method: :get, data: { turbo_frame: 'modal' }, class: "rounded-lg py-3 px-5 bg-green-600 text-white block font-medium"
+
+- if @personal_data.count > 0
+  = render 'personal_data', personal_info: @personal_data

@@ -1,0 +1,65 @@
+- if defined?(personal_data)
+  div id="#{dom_id(personal_data)}"
+
+    div.flex.items-center
+      strong.block.font-medium.mb-1 First Name:
+      span.ml-2 = personal_data.first_name
+
+    div.flex.items-center
+      strong.block.font-medium.mb-1 Last Name:
+      span.ml-2 = personal_data.last_name
+
+    div.flex.items-center
+      strong.block.font-medium.mb-1 Nickname:
+      span.ml-2 = personal_data.nickname
+
+    div.flex.items-center
+      strong.block.font-medium.mb-1 Email:
+      span.ml-2 = personal_data.email
+
+    div.flex.items-center
+      strong.block.font-medium.mb-1 Phone Number:
+      span.ml-2 = personal_data.phone_number
+
+    - if personal_data.employments.any?
+      div.font-semibold.text-lg.mt-5 Employments Details for #{personal_data.first_name}:
+      - personal_data.employments.each do |employment|
+        div.flex.items-center.mt-5
+          strong.block.font-medium.mb-1 Employer:
+          span.ml-2 = employment.employer
+        div.flex.items-center
+          strong.block.font-medium.mb-1 Date Started:
+          span.ml-2 = employment.date_started
+        div.flex.items-center
+          strong.block.font-medium.mb-1 Date Ended:
+          span.ml-2 = employment.date_ended
+
+    - if action_name != "show"
+      = link_to "Show this personal data", personal_data, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+      hr.mt-6
+
+- if defined?(personal_info)
+  div.flex.justify-center.font-bold.text-lg.mt-20 Employees Personal Data
+  div.flex.justify-center.items-center.mt-5
+    table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400
+      thead.text-center.text-gray-700.uppercase
+        tr
+          th.bg-green-100.border.px-8.py-4 First Name
+          th.bg-green-100.border.px-8.py-4 Last Name
+          th.bg-green-100.border.px-8.py-4 Email
+          th.bg-green-100.border.px-8.py-4 Phone Number
+          th.bg-green-100.border.px-8.py-4 Action
+      tbody
+        - personal_info.each do |data|
+          tr.text-center.py-4.bg-white.border-b.hover:bg-green-50
+            td.border.py-3
+              a.underline.text-green-500 href="/personal_data/#{data.id}"
+                = data.first_name
+            td.border.py-3
+              = data.last_name
+            td.border.py-3
+              = data.email
+            td.border.py-3
+              = data.phone_number
+            td.border.py-3
+              = link_to 'Delete', personal_datum_path(data.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "rounded-lg py-3 px-5 bg-green-600 text-white inline-block block font-medium"

@@ -1,0 +1,13 @@
+- border_style = first_employment ? "none" : "1px solid grey"
+
+hr.mb-10(style="border-width: 1px; border-style: #{border_style}; border-color: grey;")
+.my-2
+  = f.label :employer
+  = f.text_field :employer, autocomplete: "off", required: true, name: "employment[employer][]", id: "employer", class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: { controller: "employments" }
+.my-5
+  = f.label :date_started
+  = f.date_field :date_started, autocomplete: "off", required: true, name: "employment[date_started][]", class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: { controller: "employments" }
+.my-5
+  = f.label :date_ended
+  = f.date_field :date_ended, autocomplete: "off", required: true, name: "employment[date_ended][]", class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: { controller: "employments" }
+.mb-12

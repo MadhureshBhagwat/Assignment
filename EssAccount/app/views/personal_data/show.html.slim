@@ -1,0 +1,6 @@
+<div class="text-center font-semibold text-2xl">Employee Details</div>
+.mx-auto.md:w-1/3.mt-8
+  .mx-auto
+    = render @personal_data
+    .inline-block
+    = link_to 'Back to personal data', root_path, class: "rounded-lg py-3 px-5 bg-green-100 inline-block font-medium mt-10"

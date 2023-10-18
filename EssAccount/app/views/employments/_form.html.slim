@@ -1,0 +1,8 @@
+.modal-wrapper.bg-white.p-8.rounded-md
+  = form_with(model: employment, url: employments_path, class: "contents", data: { turbo_frame: "_top" } ) do |form|
+    = form.hidden_field :personal_data_id, value: personal_data_id
+    =render 'employments/employment_fields', f: form, first_employment: :true
+    #add-employment
+    .inline
+      = link_to 'Add Employment', add_employment_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer", data: { turbo_method: :post }
+      = form.submit "Save", id: "saveButton", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer ml-2"
