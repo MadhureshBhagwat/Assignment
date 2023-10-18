@@ -2,9 +2,7 @@
 
 # README
 
-### EmployeeHub: Streamlined Employee Information Management
-
-Assignment is a dynamic single-page application designed to simplify the process of managing and organizing employee information along with their comprehensive employment history.
+### EssAccount: Streamlined Employee Information Management
 
 ## Development Setup
 
@@ -16,13 +14,11 @@ Assignment is a dynamic single-page application designed to simplify the process
 
 ### Getting Started:
 
-To start using EmployeeHub, follow these simple steps:
+To start using EssAccount, follow these simple steps:
 
 - Clone the repository: git clone https://github.com/MadhureshBhagwat/Assignment.git
-- Navigate to the project directory: cd Assignment
+- Navigate to the project directory: cd EssAccount
 - DB Setup: rails db:create && rails db:migrate
 - Compilation:  rails assets:precompile
 - Launch the application: ./bin/dev
-# EssAccountApp
-# EssAccountApp
 # EssAccount
