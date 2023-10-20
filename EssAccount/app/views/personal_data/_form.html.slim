@@ -5,13 +5,13 @@
         = hidden_field_tag :personal_data_id, personal_data.id
         .my-2
           = form.label :first_name
-          = form.text_field :first_name, autocomplete: "off", required: true, class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "first_name", data: { controller: "personal-data", action: "input->personal-data#validateName", error: "first_name_error", maxLength: 25, name: 'First name' }
-          span#first_name_error.text-red-500
+          = form.text_field :first_name, autocomplete: "off", required: true, class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "firstName", data: { controller: "personal-data", action: "input->personal-data#validateName", error: "firstNameError", maxLength: 25, name: 'First name' }
+          span#firstNameError.text-red-500
 
         .my-2
           = form.label :last_name
-          = form.text_field :last_name, autocomplete: "off", required: true, class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "last_name", data: { controller: "personal-data", action: "input->personal-data#validateName", error: "last_name_error", maxLength: 50, name: 'Last name' }
-          span#last_name_error.text-red-500
+          = form.text_field :last_name, autocomplete: "off", required: true, class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "lastName", data: { controller: "personal-data", action: "input->personal-data#validateName", error: "lastNameError", maxLength: 50, name: 'Last name' }
+          span#lastNameError.text-red-500
 
         .my-2
           = form.label :nickname
@@ -24,7 +24,7 @@
 
         .my-5
           = form.label :phone_number
-          = form.text_field :phone_number, autocomplete: "off", required: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full", data: { controller: "personal-data", action: "input->personal-data#validatePhoneNumber" }, id: "phone_number"
+          = form.text_field :phone_number, autocomplete: "off", required: true, class: "block text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", data: { controller: "personal-data", action: "input->personal-data#validatePhoneNumber" }, id: "phone_number"
           span#phoneNumberError.text-red-500
 
         .inline.flex
